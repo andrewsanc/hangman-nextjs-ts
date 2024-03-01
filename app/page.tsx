@@ -1,7 +1,9 @@
+import StartMenu from "@/components/start-menu";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello world!</h1>
+    <div className="h-screen flex items-center justify-center">
+      <StartMenu />
     </div>
   );
 }
