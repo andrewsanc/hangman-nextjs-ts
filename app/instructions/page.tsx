@@ -7,14 +7,14 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center p-10 gap-8">
       <div className="flex items-center justify-center">
-        <IconButton
-          icon="back"
-          iconWidth={41}
-          iconHeight={38}
-          additionalStlyes="absolute left-10 w-[40px] h-[40px] sm:w-[64px] sm:h-[64px] md:w-[94px] md:h-[94px] shadow-[inset_0px_-4px_0px_1px_#243041,inset_0px_-6px_0px_7px_#9D2DF5/.25]"
-        >
-          <Link href="/"></Link>
-        </IconButton>
+        <Link href="/" className="absolute left-10 ">
+          <IconButton
+            icon="back"
+            iconWidth={41}
+            iconHeight={38}
+            additionalStlyes="w-[40px] h-[40px] sm:w-[64px] sm:h-[64px] md:w-[94px] md:h-[94px] shadow-[inset_0px_-4px_0px_1px_#243041,inset_0px_-6px_0px_7px_#9D2DF5/.25]"
+          />
+        </Link>
         <Title text="How to play" />
       </div>
       <div className="flex flex-col items-center xl:flex-row gap-4">
