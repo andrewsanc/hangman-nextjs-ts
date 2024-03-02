@@ -8,37 +8,41 @@ import { VariantProps, tv } from "tailwind-variants";
 
 interface IconButtonProps {
   icon: "heart" | "play" | "menu" | "back";
-  width?: number;
-  height?: number;
+  additionalStlyes?: string;
   iconWidth?: number;
   iconHeight?: number;
+  children?: React.ReactNode;
 }
 
 const IconMap = new Map<string, StaticImport>([
   ["heart", IconHeart],
   ["play", IconPlay],
+  ["back", IconBack],
+  ["menu", IconMenu],
 ]);
 
 export default function IconButton(props: IconButtonProps) {
   const {
     icon,
-    width = 64,
-    height = 64,
     iconWidth = 17,
     iconHeight = 16,
+    additionalStlyes,
+    children,
   } = props;
   const getIcon = IconMap.get(icon)!;
 
   return (
     <div
-      className={`rounded-full shadow-[inset_0px_-4px_0px_5px_#243041,inset_0px_-12px_0px_11px_#9D2DF5] cursor-pointer bg-gradient-to-b from-[#FE71FE] w-[${width}px] h-[${height}px] flex justify-center items-center to-[#7199FF] hover:opacity-90`}
+      className={`rounded-full ${additionalStlyes} cursor-pointer bg-gradient-to-b from-[#FE71FE] flex justify-center items-center to-[#7199FF] hover:opacity-90`}
     >
       <Image
         src={getIcon}
         alt="icon button"
         width={iconWidth}
         height={iconHeight}
+        className="w-[17px] h-[17px] sm:w-[27px] sm:h-[25px] md:w-[41px] md:h-[38px]"
       />
+      {children}
     </div>
   );
 }
